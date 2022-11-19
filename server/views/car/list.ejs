@@ -1,0 +1,55 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+<!-- Main Content -->
+<main class="container">
+        <div class = "row">
+            <div class = "col-md-offset-3 col-md-10">
+                <h1><%= title %></h1>
+                <a href="/car-list/add" class="btn btn-primary" role="button">
+                    <i class="fas fa-plus-circle"></i> Add a Car </a>
+                <br>
+                <br>
+            <table class = "table table-bordered table-striped table-hover">
+            <tr>
+                <th class = "text-center col-2">Name</th>  
+                <th class = "text-center col-1">Speed</th>
+                <th class = "text-center col-1">Horsepower</th>
+                <th class = "text-center col-1">Transmission</th>
+                <th class = "text-center col-1">Weight</th>
+                <th class = "text-center col-1">Price</th>
+                <th class = "text-center col-1"></th>
+                <th class = "text-center col-1"></th>
+                
+            </tr>
+            <!-- Repeat the template -->
+            <% for(let count=0; count < Carlist.length; count++) { %>
+                <tr>
+                    <td class = "text-center col-2"><%= Carlist[count].name %></td>
+                    <td class = "text-center col-1"><%= Carlist[count].speed %></td>
+                    <td class = "text-center col-1"><%= Carlist[count].horsepower %></td>
+                    <td class = "text-center col-1"><%= Carlist[count].transmission %></td>
+                    <td class = "text-center col-1"><%= Carlist[count].weight %></td>
+                    <td class = "text-center col-1"><%= Carlist[count].price %></td>
+                    <td class = "text-center col-1">
+                        <a href="/car-list/edit/<%= Carlist[count]._id %>"
+                            class="btn btn-primary"
+                            <i class="fas fa-pencil-alt"></i> Edit </a>
+                    </td>
+                    <td class = "text-center col-1">
+                        <a href="/car-list/delete/<%= Carlist[count]._id %>"
+                            class="btn btn-danger"
+                            <i class="fas fa-trash-alt"></i> Delete </a>
+                    </td>
+ 
+                </tr>
+
+            <% } %>
+            </table>
+            </div>
+        </div>
+  
+</main>
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>
+
+

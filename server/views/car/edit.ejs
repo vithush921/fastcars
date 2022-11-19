@@ -1,0 +1,88 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+    <!-- Content for the Edit page -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <h1> <%= title %> </h1>
+            <form class="form" method="post">
+                <div class="form-group">
+                    <label for="nameCarField">Car Name</label>
+                    <input type="text" class="form-control"
+                    id="nameCarField"
+                    placeholder="Enter the Car's Name"
+                    name="name" 
+                    value="<%= car.name %>"
+                    required>
+                    
+                </div>
+
+                <div class="form-group">
+                    <label for="speedCarField">Speed</label>
+                    <input type="text" class="form-control"
+                    id="speedCarField"
+                    placeholder="Enter the Car's speed"
+                    name="speed" 
+                    value="<%= car.speed %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="horsepowerCarField">Horsepower</label>
+                    <input type="text" class="form-control"
+                    id="horsepowerCarField"
+                    placeholder="Enter the Car's Horsepower"
+                    name="horsepower" 
+                    value="<%= car.horsepower %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="transmissionCarField">Transmission</label>
+                    <input type="text" class="form-control"
+                    id="transmissionCarField"
+                    placeholder="Enter the Car's Transmission"
+                    name="transmission" 
+                    value="<%= car.transmission %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="weightCarField">Weight</label>
+                    <input type="text" class="form-control"
+                    id="weightCarField"
+                    placeholder="Enter the Car's Weight"
+                    name="weight" 
+                    value="<%= car.weight %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="priceCarField">Price</label>
+                    <input type="text" class="form-control"
+                    id="priceCarField"
+                    placeholder="Enter the Car's Price"
+                    name="price" 
+                    value="<%= car.price %>"
+                    required>
+                </div>
+                <br>
+
+                <button class="btn-btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit
+                </button>
+
+                <a href="/car-list" class="btn btn-warning">
+                    <i class="fas fa-undo"></i>Cancel</a>
+                </form>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>
